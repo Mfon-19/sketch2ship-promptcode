@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCode | Engineering Mastery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="logo">PromptCode</div>
+        <nav>
+            <select id="challenge-selector"></select>
+            <div class="stats-bar">
+                <span id="global-rank">Rank: #124</span>
+                <span id="credits">Tokens: 450k</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sidebar">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+        </section>
+
+        <section class="workspace">
+            <div class="workspace-header">
+                <div class="challenge-info">
+                    <h2 id="challenge-title">Challenge Name</h2>
+                    <p id="challenge-desc">Description goes here...</p>
+                </div>
+                <div class="model-picker">
+                    <label>Model:</label>
+                    <select id="model-select">
+                        <option value="gpt-4">GPT-4o (Cost: 3x)</option>
+                        <option value="claude-3">Claude 3.5 Sonnet (Cost: 2x)</option>
+                        <option value="gemini-pro">Gemini Pro (Cost: 1x)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="editor-grid">
+                <div class="pane editor-pane">
+                    <label>PROMPT INPUT</label>
+                    <textarea id="prompt-input" placeholder="Enter your prompt here..."></textarea>
+                    <div class="token-counter">Tokens: <span id="current-tokens">0</span> / <span id="max-tokens">100</span></div>
+                </div>
+
+                <div class="pane output-pane">
+                    <label>LLM OUTPUT</label>
+                    <div id="llm-output" class="code-box">Waiting for execution...</div>
+                </div>
+
+                <div class="pane target-pane">
+                    <label>TARGET (GOLDEN)</label>
+                    <div id="target-output" class="code-box"></div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="run-btn" class="primary-btn">Run Execution</button>
+                <div id="score-display" class="hidden">
+                    Score: <span id="score-val">0</span>% 
+                    <span class="badge" id="efficiency-badge"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="challenges.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
